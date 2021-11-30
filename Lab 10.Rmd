@@ -75,7 +75,8 @@ storms %>%
   summarize(min_pressure = min(pressure, na.rm = TRUE)) %>% 
   slice_min(n = 10, min_pressure) %>% 
   ggplot(aes(x = min_pressure, y = name)) +
-  geom_col(aes(fill = name))
+  geom_col(aes(fill = name)) +
+  scale_fill_paletteer_d("palettetown::nuzleaf")
 ```
 
 
