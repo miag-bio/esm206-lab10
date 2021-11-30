@@ -1,0 +1,70 @@
+---
+title: "Lab 10"
+author: "Mia Guarnieri"
+date: "11/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(usethis)
+library(janitor)
+
+library(beepr)
+library(praise)
+library(cowsay)
+library(paletteer)
+library(sf)
+```
+
+# beepr package beeps
+
+Use the function `beep()` in the beepr package to make an audio alert when your code is done running.
+
+Can make other sounds too! Sounds correlate to numbers.
+
+`seq()` will make a sequence
+`rev()` will reverse it
+
+```{r, eval = FALSE}
+for (i in rev(seq(1:9999))) {
+  
+  print(paste(i, "bottles of beer on the wall"))
+  
+}
+
+# beep(4)
+#eval = FALSE means r will not even evaluate this code
+```
+
+## praise and cowsay
+
+Packages built with a single purpose: to be kind and fun
+
+```{r}
+praise("${Exclamation}, ${EXCLAMATION}...${exclamation}!!!!") #will keep capitalization
+
+praise("Holy ${creating}, Batman - this code is ${ADJECTIVE}!")
+```
+
+use cowsay::say() to make a character say something to you
+
+```{r}
+say("You are great!", by = "stretchycat")
+```
+
+
+Navigate to r profile: in Console, usethis::edit_r_profile()
+
+To make this a version-controlled project in git..
+
+usethis::use_git()
+
+THEN
+
+usethis::use_github() to connect to repo
+
+
+
