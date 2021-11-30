@@ -79,8 +79,23 @@ storms %>%
   scale_fill_paletteer_d("palettetown::nuzleaf")
 ```
 
+## One spatial data example
 
+```{r}
+vegetation <- read_sf("doc.kml") %>% 
+  select(Name) %>% #will also retain geometry column; "sticky geometry" means you won't lose this column
+  clean_names ()
 
+ggplot(data = vegetation) +
+  geom_sf(aes(fill = name), color = NA) + #once you say use geom_sf, you don't need to specify x and y, can use aesthetic and other arguments within this one; color = NA removes lines between polygons
+  theme_minimal() + #update theme
+  scale_fill_paletteer_d("ggthemes::manyeys") +
+  labs(title = "Jornada Basin LTER Vegetation",
+       caption = "Source: Jornada LTER")
+```
 
+```{r}
+ggsave(filename = "my_awesome_map.jpg", width = 8, height = 5) #default will save the last plot that was run
+```
 
 
