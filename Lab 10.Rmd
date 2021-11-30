@@ -67,4 +67,11 @@ THEN
 usethis::use_github() to connect to repo
 
 
+# paletteer to access thousands of color palettes
+
+
+
+
+
+
 
